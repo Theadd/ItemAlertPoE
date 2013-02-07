@@ -28,7 +28,7 @@ except:
     print 'Precompiled binaries can be downloaded from here: http://www.lfd.uci.edu/~gohlke/pythonlibs/#pydbg'
     sys.exit(1)
 
-ALERT_VERSION = '20130204a'
+ALERT_VERSION = '20130207a'
 POE_VERSION = '0.10.0f'
 
 class PlaySoundWorker(threading.Thread):
