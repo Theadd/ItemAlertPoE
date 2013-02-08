@@ -20,11 +20,11 @@ def getNotifyItems():
 _notifyItems = []
 keywords = ["Map", "Gems", "Currency"]
 for key in ItemList._items:
-	if any(x in ItemList._items[key][2] for x in keywords): _notifyItems.append(ItemList._items[key][1])
+    if any(x in ItemList._items[key][2] for x in keywords): _notifyItems.append(ItemList._items[key][1])
 
-	
+
 # === SETTINGS ===	
-	
+
 # Set this to True if you want to filter items and only announce
 # items that have been added to the _notifyItems list.
 # If _filterItems is False, ItemAlertPoE will announce every item drop.
@@ -35,3 +35,4 @@ _filterItems = True
 # If the item name countains a single quote, either escape it
 # using \' or use double quotes like in the example below.
 _notifyItems.append("Driftwood Wand")
+_notifyItems.append("Driftwood Club")
