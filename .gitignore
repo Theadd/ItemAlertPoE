@@ -1,6 +1,7 @@
 #itemalertpoe junk files
 *.pyc
 log.txt
+ItemAlertPoEDebug.py
 
 #OS junk files
 [Tt]humbs.db

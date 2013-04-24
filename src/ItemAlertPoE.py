@@ -34,6 +34,10 @@ POE_VERSION = '0.10.7.1'
 class PlaySoundWorker(threading.Thread):
     def run(self):
         winsound.PlaySound(r'C:\Windows\Media\Sonata\Windows Notify.wav', winsound.SND_FILENAME)
+        
+class PlaySoundUnique(threading.Thread):
+    def run(self):
+        winsound.PlaySound(r'sounds\unique.wav', winsound.SND_FILENAME)
 
 class ItemAlert(object):
 
@@ -72,6 +76,7 @@ class ItemAlert(object):
         return DBG_CONTINUE
 
     def parseWorldItemPacket(self, packetData):
+        print >>self.logFile, '#########################################'
         try:
             buffer = ByteBuffer(packetData)
             buffer.setEndian(ByteBuffer.BIG_ENDIAN)
@@ -109,12 +114,24 @@ class ItemAlert(object):
 
             unk6 = buffer.nextByte()
             itemId = buffer.nextDword()
+
             itemName = getItemName(itemId)
-            print >>self.logFile, str.format('Detected item drop: {0} (id=0x{1:08x})', itemName, itemId)
             if shouldNotify(itemName):
                 print str.format('Detected item drop: {0}', itemName)
                 worker = PlaySoundWorker()
                 worker.start()
+            
+            remaining = buffer.getRemainingBytes()
+            actual = buffer.nextDword()
+            actual = buffer.nextDword()
+            actual = buffer.nextDword()
+            actual = buffer.nextDword()
+            actual = buffer.nextDword()
+            actual = buffer.nextDword()
+            if actual == 0x00000300:
+                unique = PlaySoundUnique()
+                unique.start()
+                
         except: pass
 
     def afterDemanglingPacket(self, dbg):

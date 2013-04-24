@@ -10,6 +10,7 @@ Currently, only item names are being tracked. Item quality, stats etc. should fo
 ## Notes
 
 Original author: <a href="http://www.ownedcore.com/forums/members/69674-sku.html">SKU</a> / <a href="https://github.com/zku">ZKU</a>
+PoERecvOffsetFinder.exe author: <a href="http://www.ownedcore.com/forums/members/917705-spl3en.html">Spl3en</a> (<a href="http://spl3en.alwaysdata.net/src/C/PoeOffsetFinder/">Source</a>)
 
 It has been brought to my attention that under certain circumstances, my way of processing the packet may be wrong.  
 I would strongly advise against using this program on a hardcore character, as crashes may occur.
@@ -18,6 +19,8 @@ I would strongly advise against using this program on a hardcore character, as c
 **I'm in no way responsible for any actions taken against the user, the user's account or characters.**
 
 ## List of updates since project fork
+* **Unique** items detection
+* sounds\unique.wav played when detected a unique item
 * Added Multistrike Support Gem
 * Removed scrolls from beeping
 
