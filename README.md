@@ -9,11 +9,17 @@ Currently, only item names are being tracked. Item quality, stats etc. should fo
 
 ## Notes
 
+Original author: <a href="http://www.ownedcore.com/forums/members/69674-sku.html">SKU</a> / <a href="https://github.com/zku">ZKU</a>
+
 It has been brought to my attention that under certain circumstances, my way of processing the packet may be wrong.  
 I would strongly advise against using this program on a hardcore character, as crashes may occur.
 
 **This program may be cause for a permanent ban from the game.**  
 **I'm in no way responsible for any actions taken against the user, the user's account or characters.**
+
+## List of updates since project fork
+* Added Multistrike Support Gem
+* Removed scrolls from beeping
 
 ## Sample output
 
