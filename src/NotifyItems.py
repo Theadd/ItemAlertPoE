@@ -12,16 +12,27 @@ import ItemList
 
 def shouldNotify(itemName):
     return True if not _filterItems else itemName in getNotifyItems()
+    
+def isGemItem(itemName):
+    return True if not _filterItems else itemName in getGemItems()
 
 def getNotifyItems():
     return _notifyItems
+    
+def getGemItems():
+    return _gemItems
 
 # Recommended patch by Rhynocerous.
 _notifyItems = []
-keywords = ["Map", "Gems", "Currency"]
+keywords = ["Map", "Currency"]
 for key in ItemList._items:
     if any(x in ItemList._items[key][2] for x in keywords): _notifyItems.append(ItemList._items[key][1])
 
+#python sucks
+_gemItems = []
+gemwords = ["Gems"]
+for key in ItemList._items:
+    if any(x in ItemList._items[key][2] for x in gemwords): _gemItems.append(ItemList._items[key][1])
 
 # === SETTINGS ===	
 
@@ -34,5 +45,5 @@ _filterItems = True
 # This list is only considered if _filterItems is set to True.
 # If the item name countains a single quote, either escape it
 # using \' or use double quotes like in the example below.
-_notifyItems.append("Driftwood Wand")
-_notifyItems.append("Driftwood Club")
+#_notifyItems.append("Driftwood Wand")
+#_notifyItems.append("Driftwood Club")

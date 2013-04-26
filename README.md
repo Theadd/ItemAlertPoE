@@ -1,28 +1,24 @@
 ## ItemAlertPoE — Item Alerter for Path of Exile
 
-**ItemAlertPoE** tracks all item drops in the game [Path of Exile](http://www.pathofexile.com/) and announces them.  
-For each item that the user wants to track, ItemAlertPoE plays a notification sound and outputs the item in a console window.
-
-Items to be tracked can be added in NotifyItems.py, see the **INSTALLING file** for more information.
-
-Currently, only item names are being tracked. Item quality, stats etc. should follow soon (tm).
+**ItemAlertPoE** tracks all item drops in the game [Path of Exile](http://www.pathofexile.com/) and announces them by playing a sound telling you which kind of item it is.
+Only valuable items are being annonunced. For example, when a superior gem gets dropped you will hear "Superior Gem" as a fastened voice. To get used with rare sound drops, listen to sounds folder first.
 
 ## Notes
 
 Original author: <a href="http://www.ownedcore.com/forums/members/69674-sku.html">SKU</a> / <a href="https://github.com/zku">ZKU</a><br>
 PoERecvOffsetFinder.exe author: <a href="http://www.ownedcore.com/forums/members/917705-spl3en.html">Spl3en</a> (<a href="http://spl3en.alwaysdata.net/src/C/PoeOffsetFinder/">Source</a>)
 
+(Original author notes)
 It has been brought to my attention that under certain circumstances, my way of processing the packet may be wrong.  
 I would strongly advise against using this program on a hardcore character, as crashes may occur.
 
-**This program may be cause for a permanent ban from the game.**  
-**I'm in no way responsible for any actions taken against the user, the user's account or characters.**
-
 ## List of updates since project fork
-* **Unique** items detection
-* sounds\unique.wav played when detected a unique item
+* **Unique** items detection (plays unique.wav)
+* **Superior Gem** detection (plays superiorgem.wav)
+* Non filtered items play sound drop.wav
 * Added Multistrike Support Gem
 * Removed scrolls from beeping
+* Bugfix: Now works with no C:\Windows OS installations
 
 ## Installation instructions
 * Download and install Python 2.7 (<a href="http://www.python.org/ftp/python/2.7.4/python-2.7.4.msi">link</a>)

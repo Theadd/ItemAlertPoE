@@ -10,7 +10,7 @@ this stuff is worth it, you can buy me a beer in return.
 
 from os import system as OMGDONT
 from ItemList import getItem, getItemName
-from NotifyItems import shouldNotify
+from NotifyItems import shouldNotify, isGemItem
 from ByteBuffer import ByteBuffer
 import ctypes
 import sys
@@ -38,6 +38,10 @@ class PlaySoundWorker(threading.Thread):
 class PlaySoundUnique(threading.Thread):
     def run(self):
         winsound.PlaySound(r'sounds\unique.wav', winsound.SND_FILENAME)
+        
+class PlaySoundSuperiorGem(threading.Thread):
+    def run(self):
+        winsound.PlaySound(r'sounds\superiorgem.wav', winsound.SND_FILENAME)
 
 class ItemAlert(object):
 
@@ -125,6 +129,14 @@ class ItemAlert(object):
             actual = buffer.nextDword()
             actual = buffer.nextDword()
             actual = buffer.nextDword()
+            if isGemItem(itemName):
+                if actual == 0x00000054:
+                    worker = PlaySoundWorker()
+                    worker.start()
+                else:
+                    superiorgem = PlaySoundSuperiorGem()
+                    superiorgem.start()
+                    
             actual = buffer.nextDword()
             actual = buffer.nextDword()
             if actual == 0x00000300:
