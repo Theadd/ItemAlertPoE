@@ -33,7 +33,7 @@ POE_VERSION = '0.10.7.1'
 
 class PlaySoundWorker(threading.Thread):
     def run(self):
-        winsound.PlaySound(r'C:\Windows\Media\Sonata\Windows Notify.wav', winsound.SND_FILENAME)
+        winsound.PlaySound(r'sounds\drop.wav', winsound.SND_FILENAME)
         
 class PlaySoundUnique(threading.Thread):
     def run(self):
@@ -76,7 +76,6 @@ class ItemAlert(object):
         return DBG_CONTINUE
 
     def parseWorldItemPacket(self, packetData):
-        print >>self.logFile, '#########################################'
         try:
             buffer = ByteBuffer(packetData)
             buffer.setEndian(ByteBuffer.BIG_ENDIAN)
