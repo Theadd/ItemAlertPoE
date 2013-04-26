@@ -17,6 +17,7 @@ I would strongly advise against using this program on a hardcore character, as c
 * **Superior Gem** detection (plays superiorgem.wav)
 * Non filtered items play sound drop.wav
 * Added Multistrike Support Gem
+* Added Cyclone Skill Gem
 * Removed scrolls from beeping
 * Bugfix: Now works with no C:\Windows OS installations
 

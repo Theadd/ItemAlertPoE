@@ -104,6 +104,7 @@ _items[0x18123D24] = (0x18123D24, "Quarterstaff", "Metadata/Items/Weapons/TwoHan
 _items[0x182D5717] = (0x182D5717, "Fire Weapon", "Metadata/Items/Gems/SkillGemFireWeapon")
 _items[0x18479B10] = (0x18479B10, "Oiled Coat", "Metadata/Items/Armours/BodyArmours/BodyDexInt4")
 _items[0x1864A85C] = (0x1864A85C, "Lightning Arrow", "Metadata/Items/Gems/SkillGemLightningArrow")
+_items[0x41e63553] = (0x41e63553, "Cyclone", "Metadata/Items/Gems/SkillGemCyclone")
 _items[0x187E970B] = (0x187E970B, "Carved Wand", "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand3")
 _items[0x1888BD80] = (0x1888BD80, "Wrapped Boots", "Metadata/Items/Armours/Boots/BootsDexInt1")
 _items[0x188B5E32] = (0x188B5E32, "Siege Firestorm Effect", "Metadata/Items/MicrotransactionSkillEffects/MicrotransactionBallistaFirestorm")
