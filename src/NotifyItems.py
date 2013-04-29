@@ -15,12 +15,18 @@ def shouldNotify(itemName):
     
 def isGemItem(itemName):
     return True if not _filterItems else itemName in getGemItems()
+    
+def isFlaskItem(itemName):
+    return True if not _filterItems else itemName in getFlaskItems()
 
 def getNotifyItems():
     return _notifyItems
     
 def getGemItems():
     return _gemItems
+    
+def getFlaskItems():
+    return _flaskItems
 
 # Recommended patch by Rhynocerous.
 _notifyItems = []
@@ -33,6 +39,12 @@ _gemItems = []
 gemwords = ["Gems"]
 for key in ItemList._items:
     if any(x in ItemList._items[key][2] for x in gemwords): _gemItems.append(ItemList._items[key][1])
+    
+#python sucks
+_flaskItems = []
+flaskwords = ["Flasks"]
+for key in ItemList._items:
+    if any(x in ItemList._items[key][2] for x in flaskwords): _flaskItems.append(ItemList._items[key][1])
 
 # === SETTINGS ===	
 

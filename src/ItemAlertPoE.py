@@ -10,7 +10,7 @@ this stuff is worth it, you can buy me a beer in return.
 
 from os import system as OMGDONT
 from ItemList import getItem, getItemName
-from NotifyItems import shouldNotify, isGemItem
+from NotifyItems import shouldNotify, isGemItem, isFlaskItem
 from ByteBuffer import ByteBuffer
 import ctypes
 import sys
@@ -42,12 +42,16 @@ class PlaySoundUnique(threading.Thread):
 class PlaySoundSuperiorGem(threading.Thread):
     def run(self):
         winsound.PlaySound(r'sounds\superiorgem.wav', winsound.SND_FILENAME)
+        
+class PlaySoundSuperiorFlask(threading.Thread):
+    def run(self):
+        winsound.PlaySound(r'sounds\superiorflask.wav', winsound.SND_FILENAME)
 
 class ItemAlert(object):
 
-    BP0 = 0x001df3f9 + 0x00400000
-    BP1 = 0x001df3f1 + 0x00400000
-    BP2 = 0x001df43f + 0x00400000
+    BP0 = 0x001e0359 + 0x00400000
+    BP1 = 0x001e0351 + 0x00400000
+    BP2 = 0x001e039f + 0x00400000
 
     def __init__(self):
         atexit.register(self.atExit)
@@ -130,12 +134,16 @@ class ItemAlert(object):
             actual = buffer.nextDword()
             actual = buffer.nextDword()
             if isGemItem(itemName):
-                if actual == 0x00000054:
-                    worker = PlaySoundWorker()
-                    worker.start()
-                else:
+                if actual & 0x0000FF00 > 0:
                     superiorgem = PlaySoundSuperiorGem()
                     superiorgem.start()
+                else:
+                    worker = PlaySoundWorker()
+                    worker.start()
+            if isFlaskItem(itemName):
+                if actual & 0x0000FF00 > 0:
+                    superiorflask = PlaySoundSuperiorFlask()
+                    superiorflask.start()
                     
             actual = buffer.nextDword()
             actual = buffer.nextDword()
