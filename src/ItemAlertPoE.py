@@ -29,7 +29,7 @@ except:
     sys.exit(1)
 
 ALERT_VERSION = '20130319a'
-POE_VERSION = '0.10.7.1'
+POE_VERSION = '0.10.7.2'
 
 class PlaySoundWorker(threading.Thread):
     def run(self):
@@ -46,12 +46,17 @@ class PlaySoundSuperiorGem(threading.Thread):
 class PlaySoundSuperiorFlask(threading.Thread):
     def run(self):
         winsound.PlaySound(r'sounds\superiorflask.wav', winsound.SND_FILENAME)
+        
+class SoundPlayer(threading.Thread):
+    def run(self, sound):
+        winsound.PlaySound(r'sounds\\' + sound, winsound.SND_FILENAME)
+        print >>self.logFile, str.format('Playing: {0!s}', sound)
 
 class ItemAlert(object):
 
-    BP0 = 0x001e0359 + 0x00400000
-    BP1 = 0x001e0351 + 0x00400000
-    BP2 = 0x001e039f + 0x00400000
+    BP0 = 0x001e3789 + 0x00400000
+    BP1 = 0x001e3781 + 0x00400000
+    BP2 = 0x001e37cf + 0x00400000
 
     def __init__(self):
         atexit.register(self.atExit)
@@ -127,6 +132,13 @@ class ItemAlert(object):
                 print str.format('Detected item drop: {0}', itemName)
                 worker = PlaySoundWorker()
                 worker.start()
+            
+            #Specified items (like gems)
+            sPlayer = SoundPlayer()
+            if itemId == 0xC04F5629:
+                sPlayer.start('exaltedorb.wav');
+            if itemId == 0x07A992EB:
+                sPlayer.start('gemcuttersprism.wav');
             
             remaining = buffer.getRemainingBytes()
             actual = buffer.nextDword()
