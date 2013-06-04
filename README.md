@@ -8,9 +8,15 @@ Only valuable items are being annonunced. For example, when a superior gem gets 
 Original author: <a href="http://www.ownedcore.com/forums/members/69674-sku.html">SKU</a> / <a href="https://github.com/zku">ZKU</a><br>
 PoERecvOffsetFinder.exe author: <a href="http://www.ownedcore.com/forums/members/917705-spl3en.html">Spl3en</a> (<a href="http://spl3en.alwaysdata.net/src/C/PoeOffsetFinder/">Source</a>)
 
-(Original author notes)
-It has been brought to my attention that under certain circumstances, my way of processing the packet may be wrong.  
-I would strongly advise against using this program on a hardcore character, as crashes may occur.
+SKU Note: I would strongly advise against using this program on a hardcore character, as crashes may occur.
+
+## Basic Item Alerter
+**New** online tool to automatically generate specific item alerts for ItemAlertPoE, usage:
+* Set your required minimal char level (optional)
+* Check one or more boxes
+* Copy result to your NotifyItems.py
+
+<a href="http://poe.roleplayer.org">http://poe.roleplayer.org</a>
 
 ## List of updates since project fork
 * **Unique** items detection (plays unique.wav)
