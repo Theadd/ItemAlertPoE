@@ -18,7 +18,7 @@ SKU Note: I would strongly advise against using this program on a hardcore chara
 
 <a href="http://poe.roleplayer.org">http://poe.roleplayer.org</a>
 
-## List of updates since project fork
+## List of updates since 2013-04-24 (Y-m-d)
 * **Unique** items detection (plays unique.wav)
 * **Superior Gem** detection (plays superiorgem.wav)
 * Non filtered items play sound drop.wav
@@ -34,6 +34,8 @@ SKU Note: I would strongly advise against using this program on a hardcore chara
 * Run Path of Exile game client
 * Double click src\PoERecvOffsetFinder.exe to make ItemAlertPoE.py work with your current Path of Exile version.
 * Finally, double click ItemAlertPoE.py
+
+Note: After a PoE game client update, repeat step 5 again.
 
 ## Sample output
 
