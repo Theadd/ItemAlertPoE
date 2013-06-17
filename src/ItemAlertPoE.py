@@ -29,7 +29,7 @@ except:
     sys.exit(1)
 
 ALERT_VERSION = '20130319a'
-POE_VERSION = '0.10.8.5'
+POE_VERSION = '0.11.0.5'
 
 class PlaySoundWorker(threading.Thread):
     def run(self):
@@ -54,9 +54,9 @@ class SoundPlayer(threading.Thread):
 
 class ItemAlert(object):
 
-    BP0 = 0x001e41d9 + 0x00400000
-    BP1 = 0x001e41d1 + 0x00400000
-    BP2 = 0x001e421f + 0x00400000
+    BP0 = 0x001ff069 + 0x00400000
+    BP1 = 0x001ff061 + 0x00400000
+    BP2 = 0x001ff0af + 0x00400000
 
     def __init__(self):
         atexit.register(self.atExit)

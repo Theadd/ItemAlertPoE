@@ -29,7 +29,7 @@ SKU Note: I would strongly advise against using this program on a hardcore chara
 
 ## Installation instructions
 * Download and install Python 2.7 (<a href="http://www.python.org/ftp/python/2.7.4/python-2.7.4.msi">link</a>)
-* Download and install dependencies (<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/sjx8sj6u/pydbg-1.2.win32-py2.7.exe">link</a>)
+* Download and install dependencies (<a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/gj5m29a8/pydbg-1.2.win32-py2.7.exe">link</a>)
 * Download and uncompress ItemAlertPoE anywhere (<a href="https://github.com/Theadd/ItemAlertPoE/archive/master.zip">link</a>)
 * Run Path of Exile game client
 * Double click src\PoERecvOffsetFinder.exe to make ItemAlertPoE.py work with your current Path of Exile version.
